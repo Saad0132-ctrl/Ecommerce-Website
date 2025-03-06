@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <div id="cartDiv" class="hidden p-8 text-center">
+      <button
+        id="shoppingButton"
+        class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded"
+      >
+        Go to Shopping
+      </button>
+
+      <div
+        id="cartItems"
+        class="mt-6 p-6 bg-white shadow-xl rounded-lg w-[90%] flex flex-wrap justify-between m-auto"
+      ></div>
+      <div
+        class="w-[40%] float-end mt-6 p-6 bg-white shadow-xl rounded-lg text-left"
+      >
+        <h1 class="text-2xl font-bold mb-4">Cart Total</h1>
+        <div class="flex justify-between">
+          <p>SubCount:</p>
+          <p id="subcount"></p>
+        </div>
+        <div class="flex justify-between">
+          <p>tax</p>
+          <p id="tax"></p>
+        </div>
+        <div class="flex justify-between">
+          <p>Total</p>
+          <p id="totalAmount"></p>
+        </div>
+        <button
+          id="checkOutButton"
+          class="bg-green-500 text-white font-bold py-1 px-2 rounded"
+        >
+          CheckOut
+        </button>
+      </div>
+
+      <div
+        id="dataContainer"
+        class="fixed hidden flex-col flex justify-center items-center inset-0 bg-slate-500 bg-opacity-50"
+      >
+        <!-- <button id="okButton" class="bg-red-500 hover:bg-red-600 py-3 px-2">OK</button> -->
+      </div>
+    </div>
+    <div
+      id="taskModal"
+      class="hidden fixed inset-0 bg-slate-400 flex justify-center items-center"
+    >
+      <div class="bg-white p-6 rounded-lg shadow-lg w-96 relative">
+        <button
+          id="closeButton"
+          class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl"
+        >
+          &times;
+        </button>
+
+        <p id="paragraphId" class="text-xl  font-semibold mb-4 text-center"></p>
+        <div class="space-y-3">
+          <label for="nameField" class="block font-medium">Name:</label>
+          <input
+            type="text"
+            id="nameField"
+            class="border border-gray-300 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Enter Your Name"
+            required
+          />
+
+          <label for="adressField" class="block font-medium">Adress:</label>
+          <input
+            id="adressField"
+            class="border border-gray-300 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Enter Your Adress"
+            required
+          />
+          <label for="contactField" class="block font-medium">Contact:</label>
+          <input
+            id="contactField"
+            class="border border-gray-300 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Enter Your Contact Number"
+            required
+          />
+        </div>
+
+        <div class="mt-4 flex justify-end">
+          <button
+            id="saveButton"
+            class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="main" class="shadow-md py-4">
+      <div
+        class="relative flex justify-between mb-4 bg-blue-500 text-white font-bold py-4 px-5 rounded"
+      >
+        <h1 class="text-2xl font-bold">Shoping Store</h1>
+        <div>
+        <p id="counter" class="absolute top-[0.5rem] left-[77rem] text-center w-5 text-[6px]   bg-red-600 rounded-full p-1"></p>
+
+        <button
+          id="showCart"
+          class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-2 rounded"
+        >
+          check cart
+        </button>
+        </div>
+      </div>
+      <div>
+        <h1 class="text-3xl font-bold text-center mb-6">Shoping Cart</h1>
+        <div id="container" class="flex flex-wrap justify-center gap-6"></div>
+      </div>
+    </div>
+    <script src="src/js/index.js"></script>
+  </body>
+</html>
